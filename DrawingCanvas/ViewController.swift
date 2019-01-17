@@ -8,13 +8,14 @@
 
 import UIKit
 
+// CG stands for core graphics
+
 class Canvas: UIView {
     
     // Properties
-    var line = [CGPoint]()
+    var lines = [[CGPoint]]() // 2D array
     
     override func draw(_ rect: CGRect) {
-        
         // Custom drawing
         super.draw(rect)
         
@@ -23,33 +24,45 @@ class Canvas: UIView {
         
         // Setup the lines
         
-        // Test dummy data
-//        let startPoint = CGPoint(x: 0, y: 0)
-//        let endPoint = CGPoint(x: 100, y: 100)
-//        context.move(to: startPoint)
-//        context.addLine(to: endPoint)
+        // Set the color
+        context.setStrokeColor(UIColor.red.cgColor)
+        // Set the line width
+        context.setLineWidth(10)
+        // Set teh line cap(rounded end in this case)
+        context.setLineCap(.butt)
         
         // Iterate through the array
-        for (i, p) in line.enumerated() {
-            
-            if i == 0 {
+        lines.forEach { (line) in
+            for (i, p) in line.enumerated() {
                 
-                // Begin the line
-                context.move(to: p)
-                
-            } else {
-                
-                // Continue the line
-                context.addLine(to: p)
+                if i == 0 {
+                    
+                    // Begin the line
+                    context.move(to: p)
+                    
+                } else {
+                    
+                    // Continue the line
+                    context.addLine(to: p)
+                    
+                }
                 
             }
-            
         }
         
         // Helps paint a line on the canvas
         context.strokePath()
         
+    }
+    
+    //=================
+    // MARK : - Touches
+    //=================
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        // Add a new line for every touch
+        lines.append([CGPoint]())
         
     }
     
@@ -58,17 +71,21 @@ class Canvas: UIView {
         
         // Get the first point touched
         guard let point = touches.first?.location(in: nil) else { return }
-        //print(point)
+        //print(point) // = Test
+        // Get last line
+        guard var lastLine = lines.popLast() else { return }
         
         // Apend the array woth the touched points
-        line.append(point)
+        lastLine.append(point)
+        // Makes sure the last line is poperly added
+        lines.append(lastLine)
         
-        // Redraw the line
+        // Redraws the canavs with all the lines
         setNeedsDisplay()
         
     }
     
-}
+} // End class
 
 class ViewController: UIViewController {
     
