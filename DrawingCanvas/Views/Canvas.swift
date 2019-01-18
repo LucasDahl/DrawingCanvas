@@ -13,6 +13,7 @@ class Canvas: UIView {
     
     // Properties
     fileprivate var lines = [[CGPoint]]() // 2D array
+    fileprivate var strokeColor = UIColor.black
     
     override func draw(_ rect: CGRect) {
         // Custom drawing
@@ -24,7 +25,7 @@ class Canvas: UIView {
         // Setup the lines
         
         // Set the color
-        context.setStrokeColor(UIColor.red.cgColor)
+        context.setStrokeColor(strokeColor.cgColor)
         // Set the line width
         context.setLineWidth(10)
         // Set teh line cap(rounded end in this case)
@@ -105,6 +106,10 @@ class Canvas: UIView {
         // Call the draw function again
         setNeedsDisplay()
         
+    }
+    
+    func setStrokeColor(color: UIColor) {
+        self.strokeColor = color
     }
     
 }

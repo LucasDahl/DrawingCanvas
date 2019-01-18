@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         button.backgroundColor = .yellow
         // Makes a black border around the button
         button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(handleColorChange), for: .touchUpInside)
         return button
         
     }()
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
         button.backgroundColor = .red
         // Makes a black border around the button
         button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(handleColorChange), for: .touchUpInside)
         return button
         
     }()
@@ -67,6 +69,7 @@ class ViewController: UIViewController {
         button.backgroundColor = .blue
         // Makes a black border around the button
         button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(handleColorChange), for: .touchUpInside)
         return button
         
     }()
@@ -87,6 +90,7 @@ class ViewController: UIViewController {
         // Set the min and max for the slider
         slider.minimumValue = 1
         slider.maximumValue = 10
+        slider.addTarget(self, action: #selector(handleSliderChange), for: .valueChanged)
         return slider
         
     }()
@@ -133,6 +137,19 @@ class ViewController: UIViewController {
         
         // Call the clear method from the canvas class
         canvas.clear()
+        
+    }
+    
+    @objc fileprivate func handleColorChange(button: UIButton) {
+        
+        // Change the stroke color(method from the canavs class) to the selected color, or black for default
+        canvas.setStrokeColor(color: button.backgroundColor ?? .black)
+        
+    }
+    
+    @objc fileprivate func handleSliderChange() {
+        
+        
         
     }
 
