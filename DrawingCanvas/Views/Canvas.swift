@@ -84,4 +84,4 @@ class Canvas: UIView {
         
     }
     
-} // End class
+}
