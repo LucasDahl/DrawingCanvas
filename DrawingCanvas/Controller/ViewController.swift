@@ -81,7 +81,10 @@ class ViewController: UIViewController {
     //================
     
     @objc fileprivate func handleUndo() {
-        print("undo")
+        
+        // Call the undo method setup in the canvas class
+        canvas.undo()
+        
     }
     
     @objc fileprivate func handleClear() {
