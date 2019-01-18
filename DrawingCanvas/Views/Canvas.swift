@@ -97,4 +97,14 @@ class Canvas: UIView {
         
     }
     
+    func clear() {
+        
+        // Removes all the lines in the array
+        lines.removeAll()
+        
+        // Call the draw function again
+        setNeedsDisplay()
+        
+    }
+    
 }
