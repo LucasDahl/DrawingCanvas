@@ -17,9 +17,9 @@ class ViewController: UIViewController {
     let canvas = Canvas()
     
     
-    //================
-    // MARK: - Buttons
-    //================
+    //====================
+    // MARK: - UI elements
+    //====================
     
     let undoButton: UIButton = {
         
@@ -41,8 +41,35 @@ class ViewController: UIViewController {
         
     }()
     
-
+    let yellowButton: UIButton = {
+        
+        let button = UIButton(type: .system)
+        button.backgroundColor = .yellow
+        // Makes a black border around the button
+        button.layer.borderWidth = 1
+        return button
+        
+    }()
     
+    let redButton: UIButton = {
+        
+        let button = UIButton(type: .system)
+        button.backgroundColor = .red
+        // Makes a black border around the button
+        button.layer.borderWidth = 1
+        return button
+        
+    }()
+    
+    let blueButton: UIButton = {
+        
+        let button = UIButton(type: .system)
+        button.backgroundColor = .blue
+        // Makes a black border around the button
+        button.layer.borderWidth = 1
+        return button
+        
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +81,16 @@ class ViewController: UIViewController {
         
     }
     
+    let slider: UISlider = {
+       
+        let slider = UISlider()
+        // Set the min and max for the slider
+        slider.minimumValue = 1
+        slider.maximumValue = 10
+        return slider
+        
+    }()
+    
     // Use this to set the frame and add the canvas to the subview
     override func loadView() {
         self.view = canvas
@@ -61,9 +98,14 @@ class ViewController: UIViewController {
     
     fileprivate func setupLayout() {
         
+        // Color stackview
+        let colorStackView = UIStackView(arrangedSubviews: [yellowButton, blueButton, redButton])
+        colorStackView.distribution = .fillEqually
+        
         // Setup the stackView
-        let stackView = UIStackView(arrangedSubviews: [undoButton, clearBUtton])
+        let stackView = UIStackView(arrangedSubviews: [undoButton, colorStackView, clearBUtton, slider])
         stackView.distribution = .fillEqually
+        stackView.spacing = 8
         
         // This is needed to allow auto-layout constraints through code usable
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +114,7 @@ class ViewController: UIViewController {
         view.addSubview(stackView)
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive = true
         
     }
     

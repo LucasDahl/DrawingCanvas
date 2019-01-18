@@ -12,7 +12,7 @@ import UIKit
 class Canvas: UIView {
     
     // Properties
-    var lines = [[CGPoint]]() // 2D array
+    fileprivate var lines = [[CGPoint]]() // 2D array
     
     override func draw(_ rect: CGRect) {
         // Custom drawing
