@@ -149,7 +149,7 @@ class ViewController: UIViewController {
     
     @objc fileprivate func handleSliderChange() {
         
-        
+        canvas.setSrokeWidth(width: slider.value)
         
     }
 

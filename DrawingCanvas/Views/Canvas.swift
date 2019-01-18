@@ -14,6 +14,7 @@ class Canvas: UIView {
     // Properties
     fileprivate var lines = [[CGPoint]]() // 2D array
     fileprivate var strokeColor = UIColor.black
+    fileprivate var strokeWidth: Float = 1
     
     override func draw(_ rect: CGRect) {
         // Custom drawing
@@ -27,7 +28,7 @@ class Canvas: UIView {
         // Set the color
         context.setStrokeColor(strokeColor.cgColor)
         // Set the line width
-        context.setLineWidth(10)
+        context.setLineWidth(CGFloat(strokeWidth))
         // Set teh line cap(rounded end in this case)
         context.setLineCap(.butt)
         
@@ -110,6 +111,10 @@ class Canvas: UIView {
     
     func setStrokeColor(color: UIColor) {
         self.strokeColor = color
+    }
+    
+    func setSrokeWidth(width: Float) {
+        self.strokeWidth = width
     }
     
 }
