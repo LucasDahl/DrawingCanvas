@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9513890521F21BB50017FD11 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9513890421F21BB50017FD11 /* Canvas.swift */; };
 		951C71FD21F0CD8200F8E7C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C71FC21F0CD8200F8E7C3 /* AppDelegate.swift */; };
 		951C71FF21F0CD8200F8E7C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C71FE21F0CD8200F8E7C3 /* ViewController.swift */; };
 		951C720221F0CD8200F8E7C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951C720021F0CD8200F8E7C3 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9513890421F21BB50017FD11 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		951C71F921F0CD8200F8E7C3 /* DrawingCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		951C71FC21F0CD8200F8E7C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		951C71FE21F0CD8200F8E7C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9513890321F21B9D0017FD11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9513890421F21BB50017FD11 /* Canvas.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9513890621F21BF90017FD11 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				951C71FE21F0CD8200F8E7C3 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		951C71F021F0CD8200F8E7C3 = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +72,9 @@
 		951C71FB21F0CD8200F8E7C3 /* DrawingCanvas */ = {
 			isa = PBXGroup;
 			children = (
+				9513890621F21BF90017FD11 /* Controller */,
+				9513890321F21B9D0017FD11 /* Views */,
 				951C71FC21F0CD8200F8E7C3 /* AppDelegate.swift */,
-				951C71FE21F0CD8200F8E7C3 /* ViewController.swift */,
 				951C720021F0CD8200F8E7C3 /* Main.storyboard */,
 				951C720321F0CD8300F8E7C3 /* Assets.xcassets */,
 				951C720521F0CD8300F8E7C3 /* LaunchScreen.storyboard */,
@@ -137,6 +156,7 @@
 			files = (
 				951C71FF21F0CD8200F8E7C3 /* ViewController.swift in Sources */,
 				951C71FD21F0CD8200F8E7C3 /* AppDelegate.swift in Sources */,
+				9513890521F21BB50017FD11 /* Canvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
