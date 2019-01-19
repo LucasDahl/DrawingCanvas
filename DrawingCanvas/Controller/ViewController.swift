@@ -118,7 +118,7 @@ class ViewController: UIViewController {
         view.addSubview(stackView)
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
         
     }
     
