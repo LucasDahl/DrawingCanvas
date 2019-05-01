@@ -75,7 +75,7 @@ class Canvas: UIView {
         // Get last line
         guard var lastLine = lines.popLast() else { return }
         
-        // Apend the array woth the touched points
+        // Apend the array with the touched points
         lastLine.points.append(point)
         // Makes sure the last line is poperly added
         lines.append(lastLine)
