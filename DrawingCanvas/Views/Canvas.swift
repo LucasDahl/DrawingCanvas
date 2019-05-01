@@ -32,7 +32,7 @@ class Canvas: UIView {
                 context.setStrokeColor(line.color.cgColor)
                 // Set the line width
                 context.setLineWidth(CGFloat(line.strokeWidith))
-                // Set teh line cap(rounded end in this case)
+                // Set the line cap(rounded end in this case)
                 context.setLineCap(.round)
                 
                 if i == 0 {
