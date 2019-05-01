@@ -80,7 +80,7 @@ class Canvas: UIView {
         // Makes sure the last line is properly added
         lines.append(lastLine)
         
-        // Redraws the canavs with all the lines
+        // Redraws the canvas with all the lines
         setNeedsDisplay()
         
     }
