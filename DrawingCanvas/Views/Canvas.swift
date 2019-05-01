@@ -77,7 +77,7 @@ class Canvas: UIView {
         
         // Apend the array with the touched points
         lastLine.points.append(point)
-        // Makes sure the last line is poperly added
+        // Makes sure the last line is properly added
         lines.append(lastLine)
         
         // Redraws the canavs with all the lines
