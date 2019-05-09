@@ -88,6 +88,7 @@ class Canvas: UIView {
     //=========================
     // MARK: - Public functions
     //=========================
+    
     func undo() {
         
         // Removes the last appened line
