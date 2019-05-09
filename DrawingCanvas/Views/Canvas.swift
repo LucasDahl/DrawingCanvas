@@ -116,4 +116,4 @@ class Canvas: UIView {
         self.strokeWidth = width
     }
     
-}
+} // End class
