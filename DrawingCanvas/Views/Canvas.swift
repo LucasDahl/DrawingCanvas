@@ -11,7 +11,10 @@ import UIKit
 
 class Canvas: UIView {
     
-    // Properties
+    //===================
+    // MARK: - Properties
+    //===================
+    
     fileprivate var lines = [Line]()
     fileprivate var strokeColor = UIColor.black
     fileprivate var strokeWidth: Float = 1
